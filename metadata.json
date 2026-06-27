@@ -1,0 +1,6 @@
+{
+  "name": "Dice Sandwich",
+  "description": "A high-converting, premium website for Dice Sandwich in Garowe, Somalia, featuring a customizable sandwich craft builder and automated WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
