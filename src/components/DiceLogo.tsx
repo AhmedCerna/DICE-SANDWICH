@@ -4,9 +4,10 @@ interface DiceLogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   showText?: boolean;
+  textColorClass?: string;
 }
 
-export default function DiceLogo({ className = '', size = 'md', showText = true }: DiceLogoProps) {
+export default function DiceLogo({ className = '', size = 'md', showText = true, textColorClass = 'text-brand-forest' }: DiceLogoProps) {
   // Determine dimensions based on size prop
   const dimensions = {
     sm: { logoWidth: 40, logoHeight: 35, fontSize: 'text-lg', letterSpacing: 'tracking-wider' },
@@ -64,7 +65,7 @@ export default function DiceLogo({ className = '', size = 'md', showText = true 
       {/* Brand Typography */}
       {showText && (
         <div className="text-center mt-3">
-          <span className={`font-display font-bold uppercase text-brand-forest ${dimensions.fontSize} ${dimensions.letterSpacing} block`}>
+          <span className={`font-display font-bold uppercase ${textColorClass} ${dimensions.fontSize} ${dimensions.letterSpacing} block`}>
             DICE
           </span>
           {size === 'xl' && (

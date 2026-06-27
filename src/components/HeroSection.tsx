@@ -1,7 +1,7 @@
 import React from 'react';
 import { RESTAURANT_INFO } from '../data';
 import DiceLogo from './DiceLogo';
-import { Sparkles, MessageSquare, MapPin, ArrowRight, Instagram, Phone } from 'lucide-react';
+import { Sparkles, MapPin, ArrowRight, Instagram, Phone, Heart } from 'lucide-react';
 
 export default function HeroSection() {
   const scrollToBuilder = () => {
@@ -13,107 +13,114 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-brand-lime pt-12 pb-16 md:py-24" id="hero">
-      {/* Decorative floating dice shapes or background effects */}
-      <div className="absolute top-10 left-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none -translate-x-1/2" />
+    <section className="relative overflow-hidden bg-brand-lime pt-8 pb-16 md:py-20" id="hero">
+      {/* Subtle overlay decorative effect */}
+      <div className="absolute inset-0 bg-radial-to-b from-transparent to-black/[0.02] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          {/* Left Column: Brand, Tagline, Elegant Typography */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Header Dice Logo representing the layout from the photo */}
-            <div className="mb-6 scale-90 sm:scale-100 flex justify-center lg:justify-start">
-              <DiceLogo size="lg" showText={true} />
+          {/* Left Column: Official Dice Sandwich Poster Layout */}
+          <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Header Dice Logo (Matching the poster's colors and text) */}
+            <div className="mb-6 scale-95 sm:scale-100 flex justify-center lg:justify-start">
+              <DiceLogo size="lg" showText={true} textColorClass="text-emerald-800" />
             </div>
 
-            {/* Typography mimicking the photo strictly */}
-            <div className="space-y-3 max-w-xl">
-              <h1 className="font-serif font-black uppercase text-brand-forest tracking-tight leading-none text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                Tandoori <br />
-                Chicken <br />
-                <span className="text-brand-magenta">Sandwich</span>
-              </h1>
-              
-              <p className="text-brand-forest/85 text-xs sm:text-sm tracking-wider font-semibold uppercase mt-2 max-w-md">
-                "Fairly seasoned and flamed tandoori chicken accompanied by fresh vegetables topped with five different sauces"
-              </p>
-            </div>
-
-            {/* Signature Tagline strictly matched */}
-            <div className="mt-6">
-              <p className="font-script text-3xl sm:text-4xl text-brand-magenta select-none transform -rotate-2">
-                "{RESTAURANT_INFO.tagline}"
+            {/* Somali Slogan stacked vertically (Mimicking the exact visual of the brand poster) */}
+            <div className="my-6">
+              <div className="flex flex-col font-display font-black tracking-tight leading-none text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-brand-forest uppercase space-y-1 select-none">
+                <span className="hover:text-brand-magenta transition-colors duration-200">KULMIN</span>
+                <span className="hover:text-brand-magenta transition-colors duration-200">DHADHAN</span>
+                <span className="hover:text-brand-magenta transition-colors duration-200">TAYO</span>
+                <span className="text-brand-magenta">NADAAFAD</span>
+                <span className="hover:text-brand-magenta transition-colors duration-200">IYO</span>
+                <span className="text-brand-magenta">CAAFIMAAD</span>
+              </div>
+              <p className="text-[10px] sm:text-xs tracking-widest font-black text-brand-forest/65 uppercase mt-3">
+                "Combining Taste, Quality, Cleanliness & Health"
               </p>
             </div>
 
             {/* Action Buttons optimized for high conversion */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 sm:px-0 z-20">
               <button
                 onClick={scrollToBuilder}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-black text-white bg-brand-forest hover:bg-brand-forest/90 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-black text-white bg-brand-forest hover:bg-brand-forest/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
               >
-                <span>🎲 Craft Your Own</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>🎲 Craft Your Choice</span>
+                <ArrowRight className="h-4 w-4 text-brand-lime" />
               </button>
               
               <button
                 onClick={scrollToMenu}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-bold text-brand-forest bg-white hover:bg-gray-50 border border-brand-forest/10 hover:border-brand-forest/30 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-brand-forest bg-white hover:bg-gray-50 border border-brand-forest/10 hover:border-brand-forest/20 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
               >
-                <span>🍽️ Browse Menu</span>
+                <span>🍽️ See Digital Menu</span>
               </button>
             </div>
 
-            {/* Social handles and location matching the bottom of the photo */}
-            <div className="mt-12 pt-6 border-t border-brand-forest/10 w-full flex flex-wrap justify-center lg:justify-between items-center gap-4 text-xs font-bold text-brand-forest/80 uppercase tracking-wider">
-              {/* Instagram Handle */}
-              <a 
-                href={RESTAURANT_INFO.instagram} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="flex items-center gap-2 hover:text-brand-magenta transition-colors"
-              >
-                <Instagram className="h-4 w-4 text-brand-magenta" />
-                <span>@dicesandwich</span>
-              </a>
+            {/* Poster Footer (Landmarks, Green Phones, Social Accounts) */}
+            <div className="mt-10 pt-6 border-t border-brand-forest/10 w-full flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4">
+              {/* Phone Contacts (Green text exactly matching bottom-left of the poster) */}
+              <div className="flex flex-col items-center sm:items-start text-xs font-black tracking-wider text-emerald-800 uppercase font-mono">
+                <div className="flex items-center gap-1 text-emerald-800 mb-1">
+                  <Phone className="h-3.5 w-3.5 fill-emerald-800 text-emerald-800 shrink-0" />
+                  <span className="text-[10px] font-sans font-bold text-brand-forest/70">CALL HOTLINES:</span>
+                </div>
+                <a href="tel:+252905349223" className="hover:text-brand-magenta transition-colors text-sm sm:text-base">905349223</a>
+                <a href="tel:+252905945598" className="hover:text-brand-magenta transition-colors text-sm sm:text-base">905945598</a>
+              </div>
 
-              {/* Location Tag */}
-              <div className="flex items-center gap-1.5">
-                <MapPin className="h-4 w-4 text-brand-magenta" />
-                <span>Garoowe, Nugaal, Somalia</span>
+              {/* Location Detail & Instagram */}
+              <div className="flex flex-col items-center sm:items-end text-right text-xs font-bold text-brand-forest/80 uppercase tracking-wider space-y-1.5">
+                <div className="flex items-center gap-1.5 justify-center sm:justify-end text-emerald-800">
+                  <MapPin className="h-4 w-4 shrink-0" />
+                  <span className="font-black">Garoowe, Nugaal, Somalia</span>
+                </div>
+                <a 
+                  href={RESTAURANT_INFO.instagram} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-1.5 justify-center sm:justify-end hover:text-brand-magenta transition-colors text-[10px] font-black text-brand-forest/70"
+                >
+                  <Instagram className="h-3.5 w-3.5 text-brand-magenta shrink-0" />
+                  <span>@dicesandwich</span>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Stunning generated Sandwich Hero Image */}
-          <div className="lg:col-span-5 flex justify-center relative">
-            {/* Elegant overlay frame */}
-            <div className="absolute -inset-1.5 bg-gradient-to-tr from-brand-magenta to-brand-orange rounded-[2.5rem] blur-md opacity-20" />
-            
-            <div className="relative bg-white p-4 rounded-[2.2rem] shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300 max-w-sm sm:max-w-md lg:max-w-full">
+          {/* Right Column: Stunning Vertically Stacked Sandwich and Loaded Bowl Poster Graphic */}
+          <div className="lg:col-span-6 flex justify-center relative">
+            <div className="relative bg-white p-3 rounded-[2.5rem] shadow-2xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300 max-w-sm sm:max-w-md lg:max-w-full">
+              {/* Overlay highlight ribbon */}
+              <div className="absolute top-6 right-6 z-20 bg-brand-magenta text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-md shadow-md transform rotate-3">
+                🔥 Hot Deal
+              </div>
+
               <img 
-                src="/src/assets/images/tandoori_sandwich_hero_1782585855587.jpg" 
-                alt="Delicious Custom Tandoori Chicken Sandwich"
-                className="w-full h-auto object-cover rounded-[1.6rem] aspect-[4/3] lg:aspect-[1/1] xl:aspect-[4/3]"
+                src="/src/assets/images/dice_stacked_gourmet_1782587021970.jpg" 
+                alt="Dice Sandwich gourmet stacked baguette and loaded tray container with specialty sauces"
+                className="w-full h-auto object-cover rounded-[1.8rem] aspect-[3/4]"
                 referrerPolicy="no-referrer"
                 id="hero-sandwich-img"
               />
               
-              {/* Floating review card or highlight badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-brand-forest/95 backdrop-blur-md p-4 rounded-2xl border border-white/10 text-white flex items-center justify-between shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="bg-brand-lime text-brand-forest p-2 rounded-xl font-black text-sm">
+              {/* Bottom transparent info bar */}
+              <div className="absolute bottom-6 left-6 right-6 bg-brand-forest/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 text-white flex items-center justify-between shadow-lg">
+                <div className="flex items-center gap-2.5">
+                  <div className="bg-brand-lime text-brand-forest h-8 w-8 rounded-lg flex items-center justify-center font-black text-xs select-none shadow-sm">
                     🎲
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm tracking-tight">100% Customizable</h3>
-                    <p className="text-[10px] text-gray-300">You craft, we grill!</p>
+                    <h3 className="font-extrabold text-xs tracking-tight">The Gourmet Craft</h3>
+                    <p className="text-[9px] text-gray-300">"my heart beats with it"</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="block text-brand-lime font-black text-sm">$3.50</span>
-                  <span className="text-[9px] text-gray-400 uppercase tracking-widest font-semibold">Special</span>
+                  <span className="text-[8px] text-gray-300 uppercase tracking-widest font-bold">100% Wholesome</span>
                 </div>
               </div>
             </div>
